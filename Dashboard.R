@@ -113,7 +113,7 @@ ui <- navbarPage("Finance Dashboard",
       #create a dropdown list to select an account  
       column(width = 2,    
         selectInput("selectedAccount", label = "Account",
-          choices = list("Visa" = "Visa_7651",
+          choices = list("Credit" = "Visa_7651",
             "Checking" = "Checking_4883",
             "Savings" = "Savings_6893"))
       ),
@@ -247,7 +247,7 @@ server <- function(input, output, session) {
               )
             },
             
-            "ORDER BY transID DESC",
+            "ORDER BY transDate DESC",
             input$rowsToLoad
            )
     )

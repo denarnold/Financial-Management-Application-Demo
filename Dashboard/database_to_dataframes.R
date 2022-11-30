@@ -77,7 +77,7 @@ dbConnection <- dbConnect(RSQLite::SQLite(), "../SQLite Database/Sample Finance 
 
 #create a dataframe containing balances for each bank account
 bankBal <- data.frame(
-  Account = c("Visa", "Checking", "Savings"),
+  Account = c("Credit", "Checking", "Savings"),
   Balance = c(
     #dbGetQuery imports a dataframe even though here it is just returning a single value.
     #  Using [1,] at the end selects the first element as a string, which is what is needed here.
