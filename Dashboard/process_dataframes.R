@@ -234,8 +234,9 @@ newBitcoin <- data.frame(plotMonth = seq.Date(
 #find the last day of each month (round up to the next month and subtract 1 day)
 newBitcoin$date <- ceiling_date(newBitcoin$plotMonth, unit = "month") - 1
 
-#import Bitcoin price history and convert dates
+#import Bitcoin price history, rename columns to lowercase, and convert dates
 bitcoinPriceHistory <- read.csv(file = 'https://www.cryptodatadownload.com/cdd/Binance_BTCUSDT_d.csv', skip = 1)
+names(bitcoinPriceHistory) <- tolower(names(bitcoinPriceHistory))
 bitcoinPriceHistory$date <- as.Date(bitcoinPriceHistory$date)
 
 #copy over relevant closing prices
